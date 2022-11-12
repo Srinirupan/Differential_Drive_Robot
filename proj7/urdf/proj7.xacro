@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="proj7" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find proj7)/urdf/gazebo_refs_xArm.xacro" />
+<xacro:include filename="$(find proj7)/urdf/transmission_xArm.xacro" />
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.350817488517824 -5.55111512312578E-17 0.085189956317522"
+        rpy="0 0 0" />
+      <mass value="39.1290758905039" />
+      <inertia
+        ixx="0.57820270304639"
+        ixy="5.50155675767055E-17"
+        ixz="0.0411160711805077"
+        iyy="1.24922666790371"
+        iyz="2.87867261314556E-17"
+        izz="1.60162243877756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/base_link.STL" />
+      </geometry>
+      <gazebo>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </gazebo>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel1">
+    <inertial>
+      <origin
+        xyz="1.84071646813777E-11 -0.0798978308085576 -1.84123272184422E-11"
+        rpy="0 0 0" />
+      <mass
+        value="2.8181635923232" />
+      <inertia
+        ixx="0.00910838466103365"
+        ixy="7.45691668896085E-13"
+        ixz="6.4447164477413E-16"
+        iyy="0.0141617550665306"
+        iyz="-2.97733458732594E-13"
+        izz="0.00910838466103446" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1 -0.18 0.0250000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel2">
+    <inertial>
+      <origin
+        xyz="-3.19103285462141E-11 0.0798978308085577 1.3225975870057E-11"
+        rpy="0 0 0" />
+      <mass
+        value="2.81816359232321" />
+      <inertia
+        ixx="0.00910838466103428"
+        ixy="7.43290915100517E-13"
+        ixz="1.30281564358401E-15"
+        iyy="0.0141617550665316"
+        iyz="-7.63146339114582E-13"
+        izz="0.00910838466103485" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1 0.18 0.0249999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel3">
+    <inertial>
+      <origin
+        xyz="-2.70886091335854E-11 -0.0798978308085576 -1.54760093629136E-11"
+        rpy="0 0 0" />
+      <mass
+        value="2.81816359232321" />
+      <inertia
+        ixx="0.00910838466103435"
+        ixy="-5.79266533676345E-13"
+        ixz="-1.08769322282951E-15"
+        iyy="0.0141617550665311"
+        iyz="-7.68222231200298E-13"
+        izz="0.00910838466103429" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_joint"
+    type="continuous">
+    <origin
+      xyz="-0.55 -0.18 0.025"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel4">
+    <inertial>
+      <origin
+        xyz="3.85323994933628E-11 0.0798978308085575 -9.15667541789844E-12"
+        rpy="0 0 0" />
+      <mass
+        value="2.81816359232319" />
+      <inertia
+        ixx="0.00910838466103397"
+        ixy="-9.80464853400056E-13"
+        ixz="1.50063397987546E-15"
+        iyy="0.0141617550665322"
+        iyz="7.28431217376692E-13"
+        izz="0.00910838466103579" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://proj7/meshes/wheel4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_joint"
+    type="continuous">
+    <origin
+      xyz="-0.55 0.18 0.0250000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  
+</robot>
